@@ -1,0 +1,88 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!DOCTYPE html>
+<html>
+
+
+<!-- Styles block -->
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+<!-- <body> -->
+<!-- Content block -->
+{% block content %}
+<ul class="nav nav-tabs nav-tabs-right" id="myTab" role="tablist">
+    <span class="inline heading">
+        <h3>The Pitch site</h3>
+    </span>
+    <li class="nav-item">
+        <a class="nav-link active" id="pickup" data-toggle="tab" href="#pickup" role="tab" aria-controls="pickup"
+            aria-selected="true">Pickup -lines</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="interview-tab" data-toggle="tab" href="#interview" role="tab" aria-controls="interview"
+            aria-selected="false">Interview</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="production-tab" data-toggle="tab" href="#production" role="tab"
+            aria-controls="production" aria-selected="false">Production</a>
+    </li>
+</ul>
+
+<!-- Popular movie -->
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="pickup" role="tabpanel" aria-labelledby="pickup-tab">
+
+        <section>
+            <div class="content" id="Pickup">
+
+                <div class="tab-content">
+                    <div class="Pitch">
+                        {{macro.displayPitchList(pickup_lines)}}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Upcoming movie  -->
+    <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="interview" role="tabpanel" aria-labelledby="interview-tab">
+        
+                <section>
+                    <div class="content" id="Interview">
+        
+                        <div class="tab-content">
+                            <div class="Pitch">
+                                {{macro.displayPitchList(interview)}}
+        
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+    <!-- Now showing movie -->
+    <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="promotion" role="tabpanel" aria-labelledby="promotion-tab">
+        
+                <section>
+                    <div class="content" id="Promotion">
+        
+                        <div class="tab-content">
+                            <div class="Pitch">
+                                {{macro.displayPitchList(promotion)}}
+        
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+    {% endblock%}
+    <!-- </body>
+
+</html> -->

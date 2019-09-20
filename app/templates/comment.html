@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- Content block -->
+{% block content %}
+<div>
+    <h3>{{pitch.pitch_title}}</h3>
+    <small class="text-muted">Posted on {{pitch.posted.strftime('%d/%m/%Y')}} | {{pitch.category}}</small>
+    <p>{{pitch.content}}</p>
+    <p>By {{pitch.user.username}}</p>
+</div>
+
+<div class="col-md-4">
+        {{ wtf.quick_form(comment_form)}}
+    </div>
+    <div class="something">
+         {{macro.displayComments(comment)}}
+    </div>
+</div>
+<p><a href="/"> home-page </a></p>
+{% endblock %}
