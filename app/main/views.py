@@ -1,7 +1,7 @@
 from flask import render_template,request,redirect,url_for,abort
 from . import main
-from .forms import PitchForm,UpdateProfile
-from ..models import User, Role, Pitch,Like,Dislike
+from .forms import UpdateProfile, PitchForm, CommentForm
+from ..models import User, Role, Pitch,Like,Dislike,Comment
 from flask_login import login_required, current_user
 from .. import db,photos
 from sqlalchemy import func
@@ -15,17 +15,18 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
+    interviewpitches = Pitch.query.filter_by(category="Interview-Pitch").order_by(Pitch.posted.desc()).all()
+    productpitches = Pitch.query.filter_by(category="Product-Pitch").order_by(Pitch.posted.desc()).all()
+    promotionpitches = Pitch.query.filter_by(category="Promotion-Pitch").order_by(Pitch.posted.desc()).all()
+    businesspitches = Pitch.query.filter_by(category="Business-Pitch").order_by(Pitch.posted.desc()).all()
 
-    # Getting popular movie
-    pickup_lines = Pitch.query.filter_by(category="pickup")
-    interview = Pitch.query.filter_by(category = "interview")
-    promotion = Pitch.query.filter_by(category = "promotion")
-
+    pitches = Pitch.query.filter_by().first()
     # likes = Like.get_all_likes(pitch_id=Pitch.id)
     # dislikes = Dislike.get_all_dislikes(pitch_id=Pitch.id)
 
-    title = 'Home - Welcome to The best pitch posting Website Online'
-    return render_template('index.html', title = title, pickup_lines = pickup_lines, interview = interview, promotion = promotion)
+
+    title = 'Home | One Min Pitch'
+    return render_template('index.html', title = title, pitches = pitches, interviewpitches = interviewpitches, productpitches = productpitches, promotionpitches = promotionpitches, businesspitches = businesspitches)
 
 @main.route('/user/<uname>')
 @login_required
@@ -71,7 +72,7 @@ def update_pic(uname):
 
 @main.route('/pitch/new',methods = ['GET','POST'])
 @login_required
-def new_pitch():
+def pitch():
     '''
     View pitch function that returns the pitch page and data
     '''
@@ -156,4 +157,19 @@ def dislike(pitch_id):
     new_dislike.save_dislikes()
     return redirect(url_for('.index'))
 
-    
+@main.route('/home', methods = ['GET', 'POST'])
+@login_required
+def home():
+    '''
+    View home function that returns the home page
+    '''
+    interviewpitches = Pitch.query.filter_by(category="Interview-Pitch").order_by(Pitch.posted.desc()).all()
+    productpitches = Pitch.query.filter_by(category="Product-Pitch").order_by(Pitch.posted.desc()).all()
+    promotionpitches = Pitch.query.filter_by(category="Promotion-Pitch").order_by(Pitch.posted.desc()).all()
+    businesspitches = Pitch.query.filter_by(category="Business-Pitch").order_by(Pitch.posted.desc()).all()
+    # all_pitches = Pitch.get_all_pitches()
+    pitch = Pitch.get_all_pitches()
+    # print(all_pitches)
+
+    title = 'Home | One Min Pitch'
+    return render_template('home.html', title = title, pitch = pitch, interviewpitches = interviewpitches, productpitches = productpitches, promotionpitches = promotionpitches, businesspitches = businesspitches)

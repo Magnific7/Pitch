@@ -60,7 +60,7 @@ class Pitch(db.Model):
     __tablename__ = 'pitches'
 
     id = db.Column(db.Integer,primary_key = True)
-    pitch = db.Column(db.String)
+    content = db.Column(db.String)
     pitch_title = db.Column(db.String)
     category = db.Column(db.String())
     posted = db.Column(db.DateTime,default=datetime.utcnow)
@@ -76,7 +76,7 @@ class Pitch(db.Model):
 
     @classmethod
     def get_pitches(cls,id):
-        pitches = Pitch.query.filter_by(movie_id=id).all()
+        pitches = Pitch.query.filter_by(pitch_id=id).all()
         return pitches
 
     def __repr__(self):
