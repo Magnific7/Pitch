@@ -157,19 +157,19 @@ def dislike(pitch_id):
     new_dislike.save_dislikes()
     return redirect(url_for('.index'))
 
-@main.route('/home', methods = ['GET', 'POST'])
-@login_required
-def home():
-    '''
-    View home function that returns the home page
-    '''
-    interviewpitches = Pitch.query.filter_by(category="Interview-Pitch").order_by(Pitch.posted.desc()).all()
-    productpitches = Pitch.query.filter_by(category="Product-Pitch").order_by(Pitch.posted.desc()).all()
-    promotionpitches = Pitch.query.filter_by(category="Promotion-Pitch").order_by(Pitch.posted.desc()).all()
-    businesspitches = Pitch.query.filter_by(category="Business-Pitch").order_by(Pitch.posted.desc()).all()
-    # all_pitches = Pitch.get_all_pitches()
-    pitch = Pitch.get_all_pitches()
-    # print(all_pitches)
+# @main.route('/home', methods = ['GET', 'POST'])
+# @login_required
+# def home():
+#     '''
+#     View home function that returns the home page
+#     '''
+#     interviewpitches = Pitch.query.filter_by(category="Interview-Pitch").order_by(Pitch.posted.desc()).all()
+#     productpitches = Pitch.query.filter_by(category="Product-Pitch").order_by(Pitch.posted.desc()).all()
+#     promotionpitches = Pitch.query.filter_by(category="Promotion-Pitch").order_by(Pitch.posted.desc()).all()
+#     businesspitches = Pitch.query.filter_by(category="Business-Pitch").order_by(Pitch.posted.desc()).all()
+#     # all_pitches = Pitch.get_all_pitches()
+#     pitch = Pitch.get_all_pitches()
+#     # print(all_pitches)
 
-    title = 'Home | One Min Pitch'
-    return render_template('home.html', title = title, pitch = pitch, interviewpitches = interviewpitches, productpitches = productpitches, promotionpitches = promotionpitches, businesspitches = businesspitches)
+#     title = 'Home | One Min Pitch'
+#     return render_template('home.html', title = title, pitch = pitch, interviewpitches = interviewpitches, productpitches = productpitches, promotionpitches = promotionpitches, businesspitches = businesspitches)
