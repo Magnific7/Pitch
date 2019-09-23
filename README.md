@@ -43,3 +43,7 @@ As a user I can :
 * Installing Flask and other Modules
 
         $ see Requirements.txt
+* To run the application, in your terminal:
+
+        $ chmod +x start.sh
+        $ ./start.sh
