@@ -15,3 +15,4 @@ As a user I can :
 ## Specifications
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
+| Display pitch categories | **On page load** | List of various categories of pitches |
