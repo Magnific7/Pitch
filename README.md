@@ -7,3 +7,4 @@ These are the behaviours/features that the application implements for use by a u
 As a user I can :
 
 * See the pitches other people have posted.
+* submit a pitch in any category.
