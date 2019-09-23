@@ -28,6 +28,12 @@ As a user I can :
 * pip
 * virtualenv
 
+### Cloning
+* In your terminal:
+
+        $ git clone https://github.com/emdeechege/peech/
+        $ cd peech
+
 ## Running the Application
 * Creating the virtual environment
         $ python3.6 -m venv --without-pip virtual
