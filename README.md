@@ -20,3 +20,6 @@ As a user I can :
 | Display profile | **Click profile page** | Redirected to a page with your profile |
 | Display pitches | **On page load** | Each pitch displays author, title, pitch, date comment tab |
 | To add a pitch  | **Click an add pitch** | Redirected to the pitch collection form|
+
+
+## SetUp / Installation Requirements
