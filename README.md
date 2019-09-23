@@ -18,7 +18,7 @@ As a user I can :
 | Display pitch categories | **On page load** | List of various categories of pitches |
 | Display tabs with  category | **On Tab link click** | Clickable links to open pitches by category |
 | Display profile | **Click profile page** | Redirected to a page with your profile |
-| Display pitches | **On page load** | Each pitch displays author, title, pitch, date comment tab |
+| Display pitches | **On any pitch category** | Displays each pitch, author, title, pitch, date comment tab in that category |
 | To add a pitch  | **Click an add pitch** | Redirected to the pitch collection form|
 
 
@@ -47,3 +47,15 @@ As a user I can :
 
         $ chmod +x start.sh
         $ ./start.sh
+## Testing the Application
+* To run the tests for the class files:
+
+        $ python3.6 manage.py test
+
+## Technologies Used
+* Python3.6
+* Flask
+
+## License
+
+Copyright (c) 2019 UM Magnific
