@@ -13,3 +13,4 @@ As a user I can :
 * comment on the different pitches and leave feedback.
 
 ## Specifications
+| Behaviour | Input | Output |
