@@ -14,3 +14,4 @@ As a user I can :
 
 ## Specifications
 | Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
