@@ -34,3 +34,6 @@ As a user I can :
         $ source virtual/bin/env
         $ curl https://bootstrap.pypa.io/get-pip.py | python
 
+* Installing Flask and other Modules
+
+        $ see Requirements.txt
