@@ -24,3 +24,4 @@ As a user I can :
 
 ## SetUp / Installation Requirements
 ### Prerequisites
+* python3.6
