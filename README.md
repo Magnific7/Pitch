@@ -16,3 +16,4 @@ As a user I can :
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
 | Display pitch categories | **On page load** | List of various categories of pitches |
+| Display tabs with  category | **On Tab link click** | Clickable links to open pitches by category |
