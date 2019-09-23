@@ -31,7 +31,7 @@ As a user I can :
 ### Cloning
 * In your terminal:
 
-        $ git clone https://github.com/emdeechege/peech/
+        $ git clone https://github.com/Magnific7/Pitch.git
         $ cd peech
 
 ## Running the Application
