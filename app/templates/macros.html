@@ -7,17 +7,6 @@
                     <div class="media-body">
                         <div class="row">
                             <div class="col-md-2 img-responsive">
-                                {% if pitch.user.profile_pic_path %}
-                                 <p>
-                                     <img src="{{url_for('static',filename = pitch.user.profile_pic_path)}}" alt="" class="img-thumbnail rounded-circle">
-                                     
-                                 </p>
-                                 {% else %}
-                                 <p>
-                                     <img src="{{url_for('static',filename = 'photos/avatar.jpg')}}" alt="" class="img-thumbnail rounded-circle">
-                                     
-                                 </p>
-                                 {% endif %}
                             </div>
                             <div class="col-md-10">
                                 <p class="pitch-metadata">
@@ -62,19 +51,6 @@
 
 
         <div class="row">
-
-<!-- 
-                    {% if comment.user.profile_pic_path %}
-                     <p>
-                         <img src="{{url_for('static',filename = comment.user.profile_pic_path)}}" alt="" class="img-thumbnail rounded-circle comment">
-
-                     </p>
-                     {% else %}
-                     <p>
-                         <img src="{{url_for('static',filename = 'photos/avatar.jpg')}}" alt="" class="img-thumbnail rounded-circle comment">
-
-                     </p>
-                     {% endif %} -->
 
 
                     <div class="media-body">

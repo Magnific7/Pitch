@@ -4,3 +4,7 @@ h3{
 .something{
     margin-left: 10%;
 }
+.card{
+    background-color: rgb(115, 117, 122);
+    padding: 5%;
+}

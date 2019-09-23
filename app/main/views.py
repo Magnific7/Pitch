@@ -21,18 +21,16 @@ def index():
     businesspitches = Pitch.query.filter_by(category="Business-Pitch").order_by(Pitch.posted.desc()).all()
 
     pitches = Pitch.query.filter_by().first()
-    # likes = Like.get_all_likes(pitch_id=Pitch.id)
-    # dislikes = Dislike.get_all_dislikes(pitch_id=Pitch.id)
 
-
-    title = 'Home | One Min Pitch'
+    title = 'Pitch'
     return render_template('index.html', title = title, pitches = pitches, interviewpitches = interviewpitches, productpitches = productpitches, promotionpitches = promotionpitches, businesspitches = businesspitches)
 
 @main.route('/user/<uname>')
 @login_required
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
-    get_pitches = Pitch.query.filter_by(user_id = User.id).all()
+    get_pitches = Pitch.query.filter_by(user_id = current_user.id).all()
+
 
     if user is None:
         abort(404)
@@ -157,19 +155,3 @@ def dislike(pitch_id):
     new_dislike.save_dislikes()
     return redirect(url_for('.index'))
 
-# @main.route('/home', methods = ['GET', 'POST'])
-# @login_required
-# def home():
-#     '''
-#     View home function that returns the home page
-#     '''
-#     interviewpitches = Pitch.query.filter_by(category="Interview-Pitch").order_by(Pitch.posted.desc()).all()
-#     productpitches = Pitch.query.filter_by(category="Product-Pitch").order_by(Pitch.posted.desc()).all()
-#     promotionpitches = Pitch.query.filter_by(category="Promotion-Pitch").order_by(Pitch.posted.desc()).all()
-#     businesspitches = Pitch.query.filter_by(category="Business-Pitch").order_by(Pitch.posted.desc()).all()
-#     # all_pitches = Pitch.get_all_pitches()
-#     pitch = Pitch.get_all_pitches()
-#     # print(all_pitches)
-
-#     title = 'Home | One Min Pitch'
-#     return render_template('home.html', title = title, pitch = pitch, interviewpitches = interviewpitches, productpitches = productpitches, promotionpitches = promotionpitches, businesspitches = businesspitches)

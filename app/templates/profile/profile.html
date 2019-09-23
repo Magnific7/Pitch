@@ -8,28 +8,30 @@
 
 
   <div class="col-md-4">
-    <h3> {{user.username| capitalize}} </h3>
+    <h3> {{current_user.username| capitalize}} </h3>
 
-    {% if user.bio %}
-      <p> {{user.bio}}</p>
+    {% if current_user.bio %}
+      <p> {{current_user.bio}}</p>
 
     {%else%}
-      <p> {{user.username| capitalize}} has no bio </p>
+      <p> {{current_user.username| capitalize}} has no bio </p>
     {% endif %}
     <div>
       <h4>Your pitches</h4>
       <ul>
-        <li>{{user.pitches.content}}</li>
+        {% for pitch in pitches_content %}
+        <li class="card">{{pitch.content}}</li>
+        {% endfor %}
       </ul>
     </div>
 
-    {% if user == current_user %}
+    {% if current_user %}
       <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a>
     {% endif %}
 
   </div>
   <div class="col-md-4">
-    {% if user.profile_pic_path %}
+    {% if current_user.profile_pic_path %}
 
     <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
 
