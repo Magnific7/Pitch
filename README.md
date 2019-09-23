@@ -27,3 +27,5 @@ As a user I can :
 * python3.6
 * pip
 * virtualenv
+
+## Running the Application
