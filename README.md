@@ -8,3 +8,4 @@ As a user I can :
 
 * See the pitches other people have posted.
 * submit a pitch in any category.
+* Leave a comment after signing in.
