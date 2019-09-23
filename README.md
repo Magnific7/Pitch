@@ -10,3 +10,4 @@ As a user I can :
 * submit a pitch in any category.
 * Leave a comment after signing in.
 * view the pitches I have created in my profile page.
+* comment on the different pitches and leave feedback.
