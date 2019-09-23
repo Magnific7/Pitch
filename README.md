@@ -11,3 +11,5 @@ As a user I can :
 * Leave a comment after signing in.
 * view the pitches I have created in my profile page.
 * comment on the different pitches and leave feedback.
+
+## Specifications
