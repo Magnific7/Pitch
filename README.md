@@ -29,3 +29,4 @@ As a user I can :
 * virtualenv
 
 ## Running the Application
+* Creating the virtual environment
