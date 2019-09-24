@@ -58,4 +58,4 @@ As a user I can :
 
 ## License
 
-Copyright (c) 2019 UM Magnific
+Copyright (c) 2019 UM Magnific.
