@@ -13,13 +13,14 @@
     <p>{{pitch.content}}</p>
     <p>By {{pitch.user.username}}</p>
 </div>
+<div class="container">
+ <small class="text-muted"> {{macro.displayComments(comment)}}</small> 
+    </div>
 
 <div class="col-md-4">
         {{ wtf.quick_form(comment_form)}}
     </div>
-    <div class="something">
-         {{macro.displayComments(comment)}}
-    </div>
+ 
 </div>
-<p><a href="/"> home-page </a></p>
+<p><br><br><a href="/"> home-page </a></p>
 {% endblock %}

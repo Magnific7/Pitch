@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block content %}
 
@@ -16,11 +17,11 @@
     {%else%}
       <p> {{current_user.username| capitalize}} has no bio </p>
     {% endif %}
-    <div>
-      <h4>Your pitches</h4>
+    <div class="container card">
+      <h4 class="card-header">Your pitches</h4>
       <ul>
         {% for pitch in pitches_content %}
-        <li class="card">{{pitch.content}}</li>
+        <li>{{pitch.content}}</li>
         {% endfor %}
       </ul>
     </div>
